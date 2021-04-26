@@ -3,7 +3,7 @@ function validateCreditCard(creditCardNum) {
     // (1) check if argument has form dddd-dddd-dddd-dddd
     const regexp = new RegExp("[\\d]{4}-[\\d]{4}-[\\d]{4}-[\\d]{4}", "g");
     if (regexp.test(String(creditCardNum)) === false) {
-        console.error('May only contain numbers.')
+        console.error('May only contain numbers.');
         return false;
     }
 
@@ -31,7 +31,8 @@ function validateCreditCard(creditCardNum) {
     digits.forEach((e) => numbers.push(parseInt(e)));
     const sum = numbers.reduce((accu, current) => accu += current);
     if (sum < 16) {
-        console.error('Sum of digits must be greater than 16.')
+        console.error('Sum of digits must be greater than 16.');
+        return false;
     }
 
     // if none of the above checks failed return true
